@@ -2,6 +2,7 @@ import Image from "next/image";
 import { AppleLogo, GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import { ButtonLink } from "../Button";
 import { Reveal } from "../Reveal";
+import { FirstOpen } from "./FirstOpen";
 import { DOWNLOAD_URL, REPO_URL } from "@/lib/site";
 
 // The close: the same coast, now at dusk, and one button.
@@ -32,6 +33,7 @@ export function Download() {
             </div>
             <span className="text-[13px] text-[#f6efe6]/75">Free and open source · Apple silicon · macOS 15 or later</span>
           </div>
+          <FirstOpen />
         </Reveal>
       </div>
     </section>

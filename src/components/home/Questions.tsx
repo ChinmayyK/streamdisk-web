@@ -8,6 +8,10 @@ const QUESTIONS = [
     a: "Yes. It is free and open source, and the code is on GitHub for anyone to read, build and improve.",
   },
   {
+    q: "Why does macOS say it can't verify StreamDisk?",
+    a: "Apple only vouches for apps signed with a paid developer account, and StreamDisk isn't yet. The first time you open it, click Done, then go to System Settings › Privacy & Security and click Open Anyway next to StreamDisk. You only do this once, and the code is on GitHub if you want to see what it does.",
+  },
+  {
     q: "Does StreamDisk use space on my Mac?",
     a: "Not for the files you open: they are held in memory while you use them. Files you keep on this Mac are stored, and a file you copy onto the disk stays here until it has uploaded, so copying a large file needs that much free space for a while.",
   },

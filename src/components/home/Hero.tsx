@@ -59,7 +59,12 @@ export function Hero() {
             <AppleLogo weight="fill" size={18} />
             Download for Mac
           </ButtonLink>
-          <span className="text-[13px] text-muted">Free and open source · macOS 15 or later</span>
+          <span className="text-[13px] text-muted">
+            Free and open source · macOS 15 or later ·{" "}
+            <a href="/#first-open" className="underline decoration-line-strong underline-offset-4 transition-colors hover:text-ink">
+              Opening it the first time
+            </a>
+          </span>
         </motion.div>
       </div>
     </section>
