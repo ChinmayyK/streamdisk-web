@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { AppleLogo } from "@phosphor-icons/react";
@@ -61,9 +62,9 @@ export function Hero() {
           </ButtonLink>
           <span className="text-[13px] text-muted">
             Free and open source · macOS 15 or later ·{" "}
-            <a href="/#first-open" className="underline decoration-line-strong underline-offset-4 transition-colors hover:text-ink">
+            <Link href="/#first-open" className="underline decoration-line-strong underline-offset-4 transition-colors hover:text-ink">
               Opening it the first time
-            </a>
+            </Link>
           </span>
         </motion.div>
       </div>
