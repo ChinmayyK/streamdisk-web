@@ -25,7 +25,7 @@ const QUESTIONS = [
   },
   {
     q: "What can StreamDisk see in my Drive?",
-    a: "By default only its own StreamDisk folder, which it creates at the top of your Drive. You can choose to show your whole Drive when you sign in.",
+    a: "By default only its own StreamDisk folder, which it creates at the top of your Drive. You can choose to show your whole Drive when you sign in. Google is still reviewing StreamDisk for whole-Drive access, so until then Google shows an \"unverified app\" screen for that choice: click Advanced, then Go to StreamDisk.",
   },
   {
     q: "Does it work with Dropbox or OneDrive?",
