@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { AppleLogo } from "@phosphor-icons/react";
 import { ButtonLink } from "../Button";
 import { EASE, useReducedMotionSafe } from "@/lib/motion";
+import { DOWNLOAD_URL } from "@/lib/site";
 
 // The opening: one plain promise over the Konkan coast at golden hour (dusk in the dark theme).
 // The painting rises out of the page colour; two painted clouds drift and part as you scroll.
@@ -54,7 +55,7 @@ export function Hero() {
           Every file shows up in Finder at full size, and none of it fills your Mac. Open a 60 GB film and it starts playing in a second or two.
         </motion.p>
         <motion.div {...enter(0.3)} className="mt-9 flex flex-col items-center gap-3">
-          <ButtonLink href="/#download" size="lg">
+          <ButtonLink href={DOWNLOAD_URL} size="lg">
             <AppleLogo weight="fill" size={18} />
             Download for Mac
           </ButtonLink>
