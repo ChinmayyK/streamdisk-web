@@ -4,6 +4,10 @@ import { SectionIntro } from "../SectionIntro";
 
 const QUESTIONS = [
   {
+    q: "Is StreamDisk free?",
+    a: "Yes. It is free and open source, and the code is on GitHub for anyone to read, build and improve.",
+  },
+  {
     q: "Does StreamDisk use space on my Mac?",
     a: "Not for the files you open: they are held in memory while you use them. Files you keep on this Mac are stored, and a file you copy onto the disk stays here until it has uploaded, so copying a large file needs that much free space for a while.",
   },

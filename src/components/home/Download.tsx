@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { AppleLogo } from "@phosphor-icons/react/dist/ssr";
+import { AppleLogo, GithubLogo } from "@phosphor-icons/react/dist/ssr";
 import { ButtonLink } from "../Button";
 import { Reveal } from "../Reveal";
-import { DOWNLOAD_URL } from "@/lib/site";
+import { DOWNLOAD_URL, REPO_URL } from "@/lib/site";
 
 // The close: the same coast, now at dusk, and one button.
 export function Download() {
@@ -17,11 +17,20 @@ export function Download() {
             Your Drive, <span className="accent-phrase !text-[#f2b46d]">one double-click away.</span>
           </h2>
           <div className="mt-10 flex flex-col items-center gap-3">
-            <ButtonLink href={DOWNLOAD_URL} size="lg">
-              <AppleLogo weight="fill" size={18} />
-              Download for Mac
-            </ButtonLink>
-            <span className="text-[13px] text-[#f6efe6]/75">Free · Apple silicon · macOS 15 or later</span>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <ButtonLink href={DOWNLOAD_URL} size="lg">
+                <AppleLogo weight="fill" size={18} />
+                Download for Mac
+              </ButtonLink>
+              <a
+                href={REPO_URL}
+                className="inline-flex h-12 items-center gap-2 rounded-full bg-white/12 px-6 text-[15.5px] font-medium text-[#f6efe6] shadow-[0_0_0_1px_rgb(255_255_255/0.22)] backdrop-blur-md transition-colors hover:bg-white/20"
+              >
+                <GithubLogo weight="fill" size={18} />
+                Source on GitHub
+              </a>
+            </div>
+            <span className="text-[13px] text-[#f6efe6]/75">Free and open source · Apple silicon · macOS 15 or later</span>
           </div>
         </Reveal>
       </div>

@@ -59,7 +59,7 @@ export function Hero() {
             <AppleLogo weight="fill" size={18} />
             Download for Mac
           </ButtonLink>
-          <span className="text-[13px] text-muted">Free · macOS 15 or later</span>
+          <span className="text-[13px] text-muted">Free and open source · macOS 15 or later</span>
         </motion.div>
       </div>
     </section>
