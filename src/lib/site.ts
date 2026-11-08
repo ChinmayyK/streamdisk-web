@@ -6,3 +6,5 @@ export const SITE_DESCRIPTION =
 export const REPO_URL = "https://github.com/ChinmayyK/streamdisk";
 /** Where the Download buttons point: the newest release's disk image on GitHub. */
 export const DOWNLOAD_URL = "https://github.com/ChinmayyK/streamdisk/releases/latest";
+export const SUPPORT_EMAIL = "chinmaykudalkarrr@gmail.com";
+export const LEGAL_UPDATED = "8 November 2026";

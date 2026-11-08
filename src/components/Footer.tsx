@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { REPO_URL } from "@/lib/site";
 
 export function Footer() {
@@ -10,6 +11,12 @@ export function Footer() {
           StreamDisk, by Chinmay Kudalkar
         </span>
         <span className="flex items-center gap-5">
+          <Link href="/privacy" className="transition-colors hover:text-ink">
+            Privacy
+          </Link>
+          <Link href="/terms" className="transition-colors hover:text-ink">
+            Terms
+          </Link>
           <a href={REPO_URL} className="transition-colors hover:text-ink">
             Source on GitHub
           </a>
