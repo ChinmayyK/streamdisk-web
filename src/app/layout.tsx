@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { THEME_SCRIPT } from "@/lib/theme-script";
@@ -7,6 +7,7 @@ import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site"
 import "./globals.css";
 
 const body = Instrument_Sans({ variable: "--font-body", subsets: ["latin"] });
+const accent = Instrument_Serif({ variable: "--font-accent", subsets: ["latin"], weight: "400", style: ["normal", "italic"] });
 const code = JetBrains_Mono({ variable: "--font-code", subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     // The theme script sets data-theme before hydration, so the attribute differs from the server's.
-    <html lang="en" className={`${body.variable} ${code.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${body.variable} ${accent.variable} ${code.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
