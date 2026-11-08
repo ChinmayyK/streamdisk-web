@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/*
+  StreamDisk design tokens, matched to the Mac app.
+  Light first: warm oat paper, ink close to brown-black, one accent (amber). Dark is warm charcoal.
+  Radius rule: controls are full pill, cards 16px, windows follow macOS (10-12px).
+*/
+:root,
+[data-theme="light"] {
+  --bg: #f4f1ec;
+  --bg-raised: #fffdfa;
+  --bg-sunken: #ebe6de;
+  --ink: #2a2520;
+  --ink-soft: #4a423a;
+  --muted: #7a7066;
+  --faint: #9a9086;
+  --line: rgb(42 37 32 / 0.09);
+  --line-strong: rgb(42 37 32 / 0.15);
+  --accent: #d47a1f;
+  --accent-ink: #b4610c;
+  --accent-soft: rgb(212 122 31 / 0.12);
+  --on-accent: #ffffff;
+  --shade: 74 52 28;
+  --shadow: 0 1px 0 rgb(255 255 255 / 0.8) inset, 0 30px 70px -30px rgb(74 52 28 / 0.28);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #171512;
+  --bg-raised: #221f1b;
+  --bg-sunken: #12100e;
+  --ink: #f3eee7;
+  --ink-soft: #d9d1c6;
+  --muted: #a1978b;
+  --faint: #7f766b;
+  --line: rgb(243 238 231 / 0.08);
+  --line-strong: rgb(243 238 231 / 0.14);
+  --accent: #e8923a;
+  --accent-ink: #f0a75c;
+  --accent-soft: rgb(232 146 58 / 0.16);
+  --on-accent: #1c1206;
+  --shade: 0 0 0;
+  --shadow: 0 1px 0 rgb(255 255 255 / 0.05) inset, 0 30px 70px -30px rgb(0 0 0 / 0.7);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-raised: var(--bg-raised);
+  --color-sunken: var(--bg-sunken);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-code);
+  --shadow-soft: var(--shadow);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+  overflow-x: clip;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: clip;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Paper grain over the whole page. Fixed and inert, so it never repaints on scroll. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+/* The macOS look inside window recreations: the system font, whatever the page uses. */
+.mac {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
