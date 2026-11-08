@@ -111,7 +111,7 @@ export function FinderDemo() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96 }}
               transition={{ duration: 0.45, ease: EASE }}
-              className="absolute left-[24%] top-[24%] z-30 w-[56%] overflow-hidden rounded-[1cqw] bg-black text-white shadow-[0_0_0_0.08cqw_rgb(255_255_255/0.14),0_3cqw_8cqw_-1cqw_rgb(0_0_0/0.75)]"
+              className="absolute left-[7%] top-[24%] z-30 w-[56%] overflow-hidden rounded-[1cqw] bg-black text-white shadow-[0_0_0_0.08cqw_rgb(255_255_255/0.14),0_3cqw_8cqw_-1cqw_rgb(0_0_0/0.75)]"
             >
               <div className="flex h-[3cqw] items-center gap-[0.7cqw] bg-[#2a2826] px-[1cqw] text-[1.05cqw]">
                 <button type="button" onClick={close} aria-label="Close" className="grid size-[1.15cqw] place-items-center rounded-full bg-[#ff5f57] text-black/0 hover:text-black/60">
@@ -147,6 +147,29 @@ export function FinderDemo() {
                   </div>
                 )}
               </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* The real StreamDisk menu bar window, dropping from its icon once the film plays */}
+        <AnimatePresence>
+          {started && (
+            <motion.div
+              key="popover"
+              initial={reduce ? false : { opacity: 0, y: -12, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.4, delay: reduce ? 0 : 0.5, ease: EASE }}
+              style={{ transformOrigin: "85% 0%" }}
+              className="absolute right-[4.5%] top-[4.2cqw] z-40 w-[27%] drop-shadow-[0_2cqw_3cqw_rgb(0_0_0/0.45)]"
+            >
+              <Image
+                src="/shots/popover-dark.png"
+                alt="StreamDisk's menu bar window: Google Drive mounted, the Konkan monsoon film streaming at 4.3 MB/s, an upload and an offline download in progress"
+                width={640}
+                height={882}
+                className="h-auto w-full rounded-[1.4cqw]"
+              />
             </motion.div>
           )}
         </AnimatePresence>
