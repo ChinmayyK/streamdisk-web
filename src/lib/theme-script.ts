@@ -1,2 +1,2 @@
-// Runs before the page paints: the saved theme, else the system's, so the page never flashes.
-export const THEME_SCRIPT = `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}})()`;
+// Runs before the page paints, so it never flashes. Light is the default; dark only when the visitor chose it.
+export const THEME_SCRIPT = `(function(){var t="light";try{if(localStorage.getItem("theme")==="dark")t="dark"}catch(e){}document.documentElement.dataset.theme=t})()`;
